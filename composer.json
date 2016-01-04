@@ -1,0 +1,12 @@
+{
+    "name": "vifito/streamings",
+    "require": {
+        "madcoda/php-youtube-api": "~1.2"
+    },
+    "authors": [
+        {
+            "name": "vifito",
+            "email": "vifito@gmail.com"
+        }
+    ]
+}
