@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #canvas {
+            width: 640px;
+            height: 640px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="info"></div>
+    <div id="canvas"></div>
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.12/d3.min.js"></script>
+    <script>
+    d3.xml("mapa.svg", "image/svg+xml", function(error, xml) {
+        if (error) {
+            throw error;
+        }
+        
+        d3.select('#canvas').node().appendChild(xml.documentElement);
+      
+        d3.select('#lalin').on("mouseover", function(d) {
+            //d3.select('#info').html('Lalín');
+            //d3.select('#path3396').transition().style('opacity',  '0.5');
+            d3.select(this).transition().attr("transform","scale(1.2)");
+        })
+        .on("mouseout", function(d) {
+            //d3.select('#info').html('');
+            d3.select(this).transition().attr("transform","scale(1)");
+        });
+    });
+    
+    //window.setTimeout(function() {
+    //    d3.select("#path3396").attr("transform", "translate(10, 10)");
+    //}, 1000);    
+    </script>
+
+</body>
+</html>
